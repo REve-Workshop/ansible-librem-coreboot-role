@@ -1,4 +1,4 @@
-#+TITLE: QuickLisp Installation Ansible Role
+#+TITLE: CoreBoot utility script Installation Ansible Role
 
 * WARNING
   :PROPERTIES:
@@ -10,7 +10,7 @@
   :ID:       8d155b05-4cd0-46cb-b321-deb33c4a3128
   :END:
   This Ansible role allows to install or update the CoreBoot utility
-  script for Librem laptops..
+  script for Librem laptops.
 
   This role expects:
   - All dependencies to be installed on the target host.
