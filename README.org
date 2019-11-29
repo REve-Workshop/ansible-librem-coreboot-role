@@ -1,0 +1,51 @@
+#+TITLE: QuickLisp Installation Ansible Role
+
+* WARNING
+  :PROPERTIES:
+  :ID:       4ff7444d-0f05-47c7-a7ed-dd20caef6f0c
+  :END:
+  Do not rely on the code blindly, it as not been tested yet.
+* Introduction
+  :PROPERTIES:
+  :ID:       8d155b05-4cd0-46cb-b321-deb33c4a3128
+  :END:
+  This Ansible role allows to install or update the CoreBoot utility
+  script for Librem laptops..
+
+  This role expects:
+  - All dependencies to be installed on the target host.
+  - The target to have an access to the repositories containing the
+    sources of the utility script and the software it manage.
+* Installation
+  :PROPERTIES:
+  :ID:       cf3ebfbf-8a49-4a1d-8baa-d54e5fa6276f
+  :END:
+  Add this repository as a role directory inside an existing ansible
+  project.
+* Usage
+  :PROPERTIES:
+  :ID:       08a79ef9-17ef-4e47-9f26-b60611e6ba68
+  :END:
+  The following variables can be overloaded in your playbook:
+  - =cb_url=, the URL of the script. [Default:
+    [[https://source.puri.sm/coreboot/utility/raw/master/coreboot_util.sh]]]
+  - =working_dir=, the working directory where to download the
+    source. [Default: /usr/local/src/librem-cb-util]
+
+  The role is to be execute as the root user on the target hosts.
+** Example playbook
+   :PROPERTIES:
+   :ID:       dd28ff5c-cb3a-462b-b259-f471e6892b96
+   :END:
+   #+begin_example
+     ---
+     - host: all
+       connect: local  
+       gather_facts: False
+       tasks:
+         - name: Update CoreBoot
+           include_role:
+             name: librem-coreboot
+           vars:
+             working_directory: "/var/lib/src/git_repos/coreboot"
+   #+end_example

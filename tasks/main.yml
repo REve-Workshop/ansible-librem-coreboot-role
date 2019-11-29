@@ -1,0 +1,10 @@
+- name: Ensure a directory exist for the CoreBoot utility script
+  file:
+    path: "{{ working_directory }}"
+    state: directory
+- name: Download the CoreBoot utility script
+  get_url:
+    url: "{{ cb_url }}"
+    dest: "{{ working_directory }}"
+- name: Instructions
+  command: 'echo "Run: sudo bash {{ working_directory }}/coreboot_util.sh"'

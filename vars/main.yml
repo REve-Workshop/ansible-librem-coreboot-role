@@ -1,0 +1,2 @@
+cb_url: https://source.puri.sm/coreboot/utility/raw/master/coreboot_util.sh
+working_directory: /usr/local/src/librem-cb-util
