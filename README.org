@@ -30,7 +30,7 @@
   - =cb_url=, the URL of the script. [Default:
     [[https://source.puri.sm/coreboot/utility/raw/master/coreboot_util.sh]]]
   - =working_dir=, the working directory where to download the
-    source. [Default: /usr/local/src/librem-cb-util]
+    source. [Default: =/usr/local/src/librem-cb-util= ]
 
   The role is to be execute as the root user on the target hosts.
 ** Example playbook
